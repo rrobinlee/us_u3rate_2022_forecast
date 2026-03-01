@@ -1,6 +1,6 @@
 # Forecasting 2022 U.S. Unemployment Rate (U-3) using Classical Time Series Models
 
-This project utilizes 2022 data from the Federal Reserve Economic Data (FRED). Data coverage includes all major areas of macroeconomic analysis: growth, inflation, employment, interest rates, exchange rates, etc.
+This project utilizes 2022 data from the Federal Reserve Economic Data (FRED) to forecast US unemployment rate (U-3). Data coverage includes all major areas of macroeconomic analysis: growth, inflation, employment, interest rates, exchange rates, etc. Independent variables are monthly supply of new housing and interest rate.
 
 The data can be accessed at: https://fred.stlouisfed.org/
 
