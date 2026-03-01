@@ -42,14 +42,14 @@ The additive Holt-Winters prediction function for time series with period length
 
 $$\widehat{y_{t+h}} = l_t + hb_t +s_{t+h-m}$$
 
-This function finds the optimal values of `alpha` (defined as $l$ in the equation above), `beta`,
-and/or `gamma`. The final fitted model is:
+Finding the optimal values of `alpha` (defined as $l$ in the equation above), `beta`,
+and/or `gamma`, the final auto-fitted model is:
 
-$$\widehat{Y_{t+h}} = (a_t + b_t \cdot h) \times s_{t + 1 + (h-1) \bmod p}, \quad
+$$\widehat{Y_{t+h}} = (a_t + b_t \cdot h) + s_{t + 1 + (h-1) \bmod p}, \quad
 \begin{cases}
-a_t = 0.8428519 \times \left(\dfrac{Y_t}{s_{t-p}}\right) + (1-0.8428519)(a_{t-1} + b_{t-1}) \newline
+a_t = 0.8428519 \times (Y_t - s_{t-p}) + (1-0.8428519)(a_{t-1} + b_{t-1}) \newline
 b_t = 0.02833799 \times (a_t - a_{t-1}) + (1-0.02833799) \times b_{t-1} \newline
-s_t = 1 \times \left(\dfrac{Y_t}{a_t}\right) + (1-1) \times s_{t-p}
+s_t = 1 \times (Y_t - a_t) + (1-1) \times s_{t-p}
 \end{cases}$$
 
 The smoothing parameters and coefficients are:
@@ -181,7 +181,7 @@ After confirming that the residuals are white noise, the model is stationary and
 
 The final calculated RMSE for the ARIMA(3,1,1)(1,1,1)[12] model is: **0.56367369**.
 
-## Model 4: Multiple Regression with ARMA Residuals
+## Model 3: Multiple Regression with ARMA Residuals
 
 Multiple regression with ARMA (AutoRegressive Moving Average) residuals combines elements of multiple linear regression with ARMA time series modeling, specifically for when the residuals from a multiple regression model exhibit autocorrelation.
 
@@ -223,7 +223,7 @@ The RMSE of the GLS model on the test data is **2.328397**.
 </p>
 
 
-## Model 5: Vector Autoregression
+## Model 4: Vector Autoregression
 
 Vector Autoregression (VAR) is a multivariate time series forecasting model used to analyze the dynamic relationships among multiple time series variables. Unlike traditional univariate time series models that focus on predicting a single variable, VAR models jointly model the behavior of multiple variables over time.
 
