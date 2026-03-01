@@ -38,7 +38,7 @@ An autoregressive process with an order of 1 and a parameter of 0.4 is optimal.
 
 ## Model 1: Holt-Winters Exponential Smoothing
 
-The additive Holt-Winters prediction function for time series with period length p is defined as:
+Leveraging [fpp2](https://otexts.com/fpp2/holt-winters.html), the additive Holt-Winters prediction function for time series with period length p is defined as:
 
 $$\widehat{y_{t+h}} = l_t + hb_t +s_{t+h-m}$$
 
